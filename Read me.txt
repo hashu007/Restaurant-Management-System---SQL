@@ -1,0 +1,47 @@
+Restaurant Ordering System Database Schema
+This repository contains the database schema for a simple restaurant ordering system. The schema is designed to store information about customers, menu items, orders, order details, and feedback.
+
+Entities:
+Customer: Represents a customer of the restaurant.
+
+CustomerID (PK): Unique identifier for each customer.
+Name: Name of the customer.
+Email: Email address of the customer.
+Phone: Phone number of the customer.
+MenuItem: Represents an item on the restaurant's menu.
+
+MenuItemID (PK): Unique identifier for each menu item.
+ItemName: Name of the menu item.
+Price: Price of the menu item.
+Order: Represents an order placed by a customer.
+
+OrderID (PK): Unique identifier for each order.
+CustomerID (FK): Foreign key referencing the Customer table.
+OrderDate: Date and time the order was placed.
+OrderDetail: Represents the details of items ordered within an order.
+
+OrderDetailID (PK): Unique identifier for each order detail.
+OrderID (FK): Foreign key referencing the Order table.
+MenuItemID (FK): Foreign key referencing the MenuItem table.
+Quantity: Quantity of the menu item ordered.
+Feedback: Represents customer feedback on their orders.
+
+FeedbackID (PK): Unique identifier for each feedback.
+OrderID (FK): Foreign key referencing the Order table.
+Comments: Customer's comments about their order.
+Rating: Rating given by the customer (e.g., on a scale of 1 to 5).
+Relationships:
+One-to-Many:
+
+A Customer can place multiple Orders.
+An Order can contain multiple OrderDetails.
+Many-to-Many:
+
+An Order can contain multiple MenuItems through the OrderDetail table.
+Usage:
+This schema can be used to build a database for a restaurant ordering system. It allows you to:
+
+Store customer information.
+Manage menu items.
+Track orders and order details.
+Collect customer feedback
